@@ -3,20 +3,22 @@ package com.example.assstriode.model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static java.lang.Float.parseFloat;
+import static java.lang.Integer.parseInt;
+
 public class Asteroid {
 
     private String name;
-    private int distance;
-    private int magnitude;
-
-    @Override
-    public String toString() {
-        return name;
-    }
+    private float distance;
+    private double magnitude;
+    private int id;
 
     public Asteroid(JSONObject JsonAsteroid) {
         try {
             this.name = (String) JsonAsteroid.get("name");
+            this.distance = parseFloat((String) JsonAsteroid.getJSONArray("close_approach_data").getJSONObject(0).getJSONObject("miss_distance").get("lunar"));
+            this.id = parseInt((String) JsonAsteroid.get("id"));
+            this.magnitude = (double) JsonAsteroid.get("absolute_magnitude_h");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -27,11 +29,11 @@ public class Asteroid {
         return this.name;
     }
 
-    public int getDistance() {
+    public float getDistance() {
         return this.distance;
     }
 
-    public int getMagnitude() {
+    public double getMagnitude() {
         return this.magnitude;
     }
 }

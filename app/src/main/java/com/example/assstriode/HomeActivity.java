@@ -61,7 +61,7 @@ public class HomeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 ListView listview = findViewById(R.id.listview);
-                ArrayAdapter adapter = new AsteroidAdapter(getApplicationContext(),  asteroids);
+                AsteroidAdapter adapter = new AsteroidAdapter(getApplicationContext(),  asteroids);
                 listview.setAdapter(adapter);
             }
         }, new Response.ErrorListener() {

@@ -1,5 +1,6 @@
 package com.example.assstriode.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ public class AsteroidAdapter extends ArrayAdapter<Asteroid> {
         this.inflater = LayoutInflater.from(context);
     }
 
+    @SuppressLint("SetTextI18n")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @Nullable ViewGroup parent) {
@@ -37,8 +39,8 @@ public class AsteroidAdapter extends ArrayAdapter<Asteroid> {
         TextView tvMagnitude = asteroidLvLine.findViewById(R.id.tvMagnitude);
 
         tvName.setText(asteroid.getName());
-        tvDistance.setText(getContext().getString(R.string.distance) + asteroid.getDistance());
-        tvMagnitude.setText(getContext().getString(R.string.magnitude) + asteroid.getMagnitude());
+        tvDistance.setText(getContext().getString(R.string.distance) + " " + asteroid.getDistance());
+        tvMagnitude.setText(getContext().getString(R.string.magnitude) + " " + asteroid.getMagnitude());
         return asteroidLvLine;
     }
 
