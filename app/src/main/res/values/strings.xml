@@ -8,4 +8,5 @@
     <string name="homeTitle">Liste des cailloux pas loin</string>
     <string name="distance">Distance :</string>
     <string name="magnitude">Magnitude :</string>
+    <string name="orbital">Période orbitale :</string>
 </resources>

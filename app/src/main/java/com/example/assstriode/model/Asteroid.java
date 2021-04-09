@@ -3,10 +3,12 @@ package com.example.assstriode.model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
 
-public class Asteroid {
+public class Asteroid implements Serializable {
 
     private String name;
     private float distance;
