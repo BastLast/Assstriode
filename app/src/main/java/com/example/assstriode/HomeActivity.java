@@ -48,15 +48,25 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 System.out.println(response);
-
                 Toast.makeText(HomeActivity.this, sucess_toast, Toast.LENGTH_SHORT).show();
-
-// JSON response​
+                List<Asteroid> asteroids = new ArrayList<>();
+                try {
+                    JSONArray asteroidsjson = response.getJSONObject("near_earth_objects").getJSONArray(today);
+                    for (int i = 0; i < asteroidsjson.length(); i++) {
+                        asteroidsjson.getJSONObject(i);
+                        asteroids.add(new Asteroid(asteroidsjson.getJSONObject(i)));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ListView listview = findViewById(R.id.listview);
+                ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, asteroids);
+                listview.setAdapter(adapter);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(HomeActivity.this, "Okay, Houston, we've had a problem here.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, fail_toast, Toast.LENGTH_SHORT).show();
             }
         });
         // Add the request to the RequestQueue.
