@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AssStérioïde">
-        <activity android:name=".ActivityAsteroidInfo"></activity>
+        <activity
+            android:name=".ActivityAsteroidInfo"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
