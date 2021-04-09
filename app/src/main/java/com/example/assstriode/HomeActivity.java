@@ -13,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.assstriode.adapter.AsteroidAdapter;
 import com.example.assstriode.model.Asteroid;
 
 import org.json.JSONArray;
@@ -60,7 +61,7 @@ public class HomeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 ListView listview = findViewById(R.id.listview);
-                ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, asteroids);
+                ArrayAdapter adapter = new AsteroidAdapter(getApplicationContext(),  asteroids);
                 listview.setAdapter(adapter);
             }
         }, new Response.ErrorListener() {

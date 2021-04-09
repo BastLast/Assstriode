@@ -6,7 +6,8 @@ import org.json.JSONObject;
 public class Asteroid {
 
     private String name;
-
+    private int distance;
+    private int magnitude;
 
     @Override
     public String toString() {
@@ -20,5 +21,17 @@ public class Asteroid {
             e.printStackTrace();
         }
 
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getDistance() {
+        return this.distance;
+    }
+
+    public int getMagnitude() {
+        return this.magnitude;
     }
 }
