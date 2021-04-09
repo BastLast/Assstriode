@@ -4,4 +4,6 @@
     <string name="title_screen_image_description">Image principale</string>
     <string name="title_screen_button_text">Commencer</string>
     <string name="sucess_toast">Houston, Tranquility Base here. The Eagle has landed.</string>
+    <string name="fail_toast">Okay, Houston, we\'ve had a problem here.</string>
+    <string name="homeTitle">Liste des cailloux pas loin</string>
 </resources>
