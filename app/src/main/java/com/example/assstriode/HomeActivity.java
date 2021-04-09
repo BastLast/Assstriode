@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         Date date = new Date();
         String today = dateFormat.format(date);
         String url = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + today +
-                "&end_date=" + today + "&api_key=47NucpwWv137CZPlAJZxykgMTMR9KF4bj5TzCYSG";
+                "&end_date=" + today + "&api_key="+ getResources().getString(R.string.apikey);;
 
         JsonObjectRequest jsObjRequest = new JsonObjectRequest(
                 Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
