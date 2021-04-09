@@ -13,6 +13,7 @@ public class Asteroid implements Serializable {
     private String name;
     private float distance;
     private double magnitude;
+    private double periodeOrbitale;
     private int id;
 
     public Asteroid(JSONObject JsonAsteroid) {
@@ -37,5 +38,21 @@ public class Asteroid implements Serializable {
 
     public double getMagnitude() {
         return this.magnitude;
+    }
+
+    public void setPeriodeOrbitale(double periodeOrbitale) {
+        this.periodeOrbitale = periodeOrbitale;
+    }
+
+    public double getPeriodeOrbitale() {
+        return this.periodeOrbitale;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
